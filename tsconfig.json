@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "helpers/*": ["src/helpers/*"],
+      "handlers/*": ["src/handlers/*"],
+      "routes/*": ["src/routes/*"],
+      "pages/*": ["src/pages/*"],
+      "providers/*": ["src/providers/*"],
+      "stateReducer/*": ["src/stateReducer/*"],
+      "svgs/*": ["src/svgs/*"],
+      "utilities/*": ["src/utilities/*"],
+      "main": ["src/main/index.jsx"],
+      "main/*": ["src/main/*"]
+    }
+  },
+  "include": ["src", "demo", "vite.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}

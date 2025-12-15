@@ -1,11 +1,14 @@
 import React from "react";
 import CheckSvg from "svgs/check.svg";
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import CheckboxStyle from "./checkbox.style";
 
-const CheckBox = (props) => {
-  const { checkUpdateHandler, active } = props;
+interface CheckBoxProps {
+  checkUpdateHandler: () => void;
+  active: boolean;
+}
+
+const CheckBox = ({ checkUpdateHandler, active }: CheckBoxProps) => {
   const classes = classnames("IN-checkbox", { active });
   return (
     <CheckboxStyle>
@@ -16,7 +19,6 @@ const CheckBox = (props) => {
           onKeyDown={() => null}
           role="checkbox"
           aria-label="activate option"
-          tabIndex="0"
           aria-checked={false}
         >
           <CheckSvg />
@@ -24,16 +26,6 @@ const CheckBox = (props) => {
       </div>
     </CheckboxStyle>
   );
-};
-
-CheckBox.defaultProps = {
-  checkUpdateHandler: () => null,
-  active: false,
-};
-
-CheckBox.propTypes = {
-  checkUpdateHandler: PropTypes.func,
-  active: PropTypes.bool,
 };
 
 export default CheckBox;

@@ -1,10 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import classnames from "classnames";
 import CardRadioStyle from "./index.style";
 
-const CardRadio = (props) => {
-  const { children, id, title, active, onClick, order } = props;
+interface CardRadioProps {
+  children: React.ReactNode;
+  title: string;
+  id: string;
+  onClick: () => void;
+  active: boolean;
+  order: number;
+}
+
+const CardRadio = ({
+  children,
+  id,
+  title,
+  active,
+  onClick,
+  order,
+}: CardRadioProps) => {
   const classes = classnames("circles", { active });
   return (
     <CardRadioStyle>
@@ -12,7 +26,7 @@ const CardRadio = (props) => {
         <div className="titles">
           <div
             className={classes}
-            onClick={(e) => onClick(e.target.id)}
+            onClick={onClick}
             id={id}
             role="checkbox"
             onKeyDown={() => null}
@@ -26,24 +40,6 @@ const CardRadio = (props) => {
       </div>
     </CardRadioStyle>
   );
-};
-
-CardRadio.defaultProps = {
-  children: [],
-  title: "Insurance Radio Card",
-  id: "insurance-radio",
-  onClick: () => null,
-  active: false,
-  order: 1,
-};
-
-CardRadio.propTypes = {
-  children: PropTypes.node,
-  title: PropTypes.string,
-  id: PropTypes.string,
-  onClick: PropTypes.func,
-  active: PropTypes.bool,
-  order: PropTypes.number,
 };
 
 export default CardRadio;

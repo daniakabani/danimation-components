@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import TextBox from "components/textBox";
 import SelectInput from "components/select";
-import Button from "components/button";
+import Button from "components/button/index.tsx";
 import TextArea from "components/textArea";
 import Toggle from "components/toggle";
-import Card from "components/card";
-import CardRadio from "components/cardRadio";
+import Card from "components/card/index.tsx";
+import CardRadio from "components/cardRadio/index.tsx";
 import selectOptions from "./options.json";
 import TestPageStyles from "./index.style";
 

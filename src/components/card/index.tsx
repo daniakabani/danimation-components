@@ -1,10 +1,13 @@
-import React from "react";
+import * as React from "react";
 import classNames from "classnames";
-import PropTypes from "prop-types";
 import CardStyle from "./index.style";
 
-const Card = (props) => {
-  const { children, recommended } = props;
+interface CardProps {
+  children: React.ReactNode;
+  recommended: Boolean;
+}
+
+const Card = ({ children, recommended }: CardProps) => {
   const classes = classNames("IN-card", "IN-card-element", { recommended });
   return (
     <CardStyle>
@@ -14,16 +17,6 @@ const Card = (props) => {
       </div>
     </CardStyle>
   );
-};
-
-Card.defaultProps = {
-  recommended: false,
-  children: [],
-};
-
-Card.propTypes = {
-  children: PropTypes.node,
-  recommended: PropTypes.bool,
 };
 
 export default Card;

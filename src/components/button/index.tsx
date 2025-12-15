@@ -1,11 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import classes from "classnames";
 import ButtonStyles from "./button.style";
 
-const Button = (props) => {
-  const { onClick, disabled = false, children } = props;
-  const clickHandler = () => onClick();
+interface ButtonProps {
+  disabled?: boolean;
+  onClick?: () => void;
+  children?: React.ReactNode;
+}
+
+const Button = ({ onClick, disabled = false, children }: ButtonProps) => {
+  const clickHandler = () => typeof onClick === "function" && onClick();
   const classNames = classes("in-button", {
     disabled,
   });
@@ -19,18 +23,6 @@ const Button = (props) => {
       </div>
     </ButtonStyles>
   );
-};
-
-Button.defaultProps = {
-  disabled: false,
-  onClick: () => {},
-  children: "Button",
-};
-
-Button.propTypes = {
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  children: PropTypes.node,
 };
 
 export default Button;

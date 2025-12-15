@@ -1,7 +1,7 @@
 import React from "react";
 import TextBox from "components/textBox";
-import Button from "components/button";
-import CheckBox from "components/checkBox";
+import Button from "components/button/index.tsx";
+import CheckBox from "components/checkBox/index.tsx";
 import InsuranceLoader from "components/loader";
 import { Redirect } from "react-router-dom";
 import {
